@@ -1,0 +1,58 @@
+<VirtualHost *:80>
+ServerAdmin  fernando981020@gmail.com
+ServerName   menu.fernandorivera.space
+ServerAlias  www.menu.fernandorivera.space
+DocumentRoot /home/fernandorivera/web/menu
+ErrorLog    /home/fernandorivera/web/menu/error.log
+CustomLog   /home/fernandorivera/web/menu/access.log combined
+
+</VirtualHost>
+<VirtualHost *:80>
+ServerAdmin  fernando981020@gmail.com
+ServerName   prociones.fernandorivera.space
+ServerAlias  www.promociones.fernandorivera.space
+DocumentRoot /home/fernandorivera/web/promociones
+ErrorLog    /home/fernandorivera/web/promociones/error.log
+CustomLog   /home/fernandorivera/web/promociones/access.log combined
+
+</VirtualHost>
+
+<VirtualHost *:80>
+ServerAdmin  fernando981020@gmail.com
+ServerName   quejas.fernandorivera.space
+ServerAlias  www.quejas.fernandorivera.space
+DocumentRoot /home/fernandorivera/quejas/menu
+ErrorLog    /home/fernandorivera/web/quejas/error.log
+CustomLog   /home/fernandorivera/web/quejas/access.log combined
+
+</VirtualHost>
+
+<VirtualHost *:80>
+ServerAdmin  fernando981020@gmail.com
+ServerName   servicio.fernandorivera.space
+ServerAlias  www.servicio.fernandorivera.space
+DocumentRoot /home/fernandorivera/web/servicio
+ErrorLog    /home/fernandorivera/web/servicio/error.log
+CustomLog   /home/fernandorivera/web/servicio/access.log combined
+
+</VirtualHost>
+
+<VirtualHost *:80>
+ServerAdmin  fernando981020@gmail.com
+ServerName   wifi.fernandorivera.space
+ServerAlias  www.wifi.fernandorivera.space
+DocumentRoot /home/fernandorivera/web/wifi
+ErrorLog    /home/fernandorivera/web/wifi/error.log
+CustomLog   /home/fernandorivera/web/wifi/access.log combined
+
+</VirtualHost>
+
+<VirtualHost *:80>
+ServerAdmin  fernando981020@gmail.com
+ServerName   fernandorivera.space
+ServerAlias  www.fernandorivera.space
+DocumentRoot /home/fernandorivera/web
+ErrorLog    /home/fernandorivera/web/error.log
+CustomLog   /home/fernandorivera/web/access.log combined
+
+</VirtualHost>
