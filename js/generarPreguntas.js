@@ -1,6 +1,6 @@
 //Evento utilizado para crear pregunta
 		   document.getElementById("tipos").addEventListener("change",function(){
-			 let contenedor=document.getElementById("mostarPreguntas");  
+			 let contenedor=document.getElementById("preguntas");  
 			  contenedor.innerHTML+=crearPregunta(document.getElementById("tipos").value);
 		   });
 //-----------------------------------------------------------------------------------------------------------------------------------		  
@@ -30,8 +30,8 @@
 							lista.innerHTML+="<li>"+valor.value+"</li>";
 						});
 
-						 document.querySelector("#mostarPreguntas").innerHTML="<h1>"+document.querySelector("#pregunta").value+"</h1>";
-						 document.querySelector("#mostrarPreguntas").appendChild(lista);										 
+						 document.querySelector("#preguntas").innerHTML="<h1>"+document.querySelector("#pregunta").value+"</h1>";
+						 document.querySelector("#preguntas").appendChild(lista);										 
 					}
 				}
 			 }
