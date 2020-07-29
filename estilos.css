@@ -291,74 +291,23 @@ p {
     text-align: center;
 }
 
+.button {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#but {
+    text-decoration: none;
+    color: white;
+}
+
 
 /* end of min-width width 1200px */
-
-
-/*CURSOS*/
-
-#espana {
-    width: 20%;
-    max-width: 900px;
-    margin: auto;
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-}
-
-a:hover {
-    text-decoration: none;
-    color: #00c9db;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-#curso1,
-#curso2 {
-    background: rgba(52, 52, 110, 0.582);
-    padding: 20px;
-    margin: 20px 0;
-    color: #fff;
-    box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.24);
-}
-
-#curso1,
-#curso2 {
-    color: #fff;
-}
-
-#curso1 hr {
-    background: red;
-    height: 5px;
-    border: none;
-}
-
-#curso1,
-#curso2 p {
-    line-height: 25px;
-}
-
-#curso1 h2,
-#curso1 p,
-#curso1,
-#curso2 hr {
-    margin-bottom: 20px;
-}
-
-#curso1 {
-    position: relative;
-    left: -350px;
-    top: 100px;
-}
-
-#curso2 {
-    position: relative;
-    left: -10px;
-    top: -198px;
-}
-
-
-/*FIN CURSOS*/
