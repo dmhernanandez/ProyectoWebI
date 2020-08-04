@@ -1,0 +1,10 @@
+img{
+	width: 100px;
+	height: auto;
+}
+
+textarea{
+	resize: none;
+	width: 200px;
+	height: 100px;
+}
