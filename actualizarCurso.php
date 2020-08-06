@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/estiloActualizarCurso.css">
-	<title>Actualizar Datos del curso</title>
+	<link rel="stylesheet" href="./css/estiloActualizarCurso.css">
+	<title>Actualizar Datos del curs</title>
 </head>
 <body>
   <form enctype="multipart/form-data">

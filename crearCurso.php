@@ -2,26 +2,43 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/styleCurso.css">
+	<title>Crear Curso</title>
 	<script type="text/javascript" src="js/"></script>
+	<link rel="stylesheet" href="./css/crearcurso.css">
+	<link rel="stylesheet" href="./css/menu.css">
+
 </head>
-<body>
+<body >
+	  <!--Menu-->
+	  <header>
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cursos.html">Cursos</a>
+                </li>
+                <li><a href="iniciarSesion.html">Inciar Sesion</a></li>
+                <li><a href="registro.html">Registrar</a></li>
+
+            </ul>
+
+        </nav>
+    </header>
     <!--El enctype se usa para desirle que son multiples archivos los que vamos a subir-->
      <form  enctype="multipart/form-data" >
      	<label class="etiquetas">Código de curso</label><br>
-     	<input type="text" name="codigo" required>  <br>
+     	<input type="text" name="codigo" required placeholder="Escriba el Codigo">  <br>
      	<label class="etiquetas">Nombre del cuso</label><br>
-     	<input type="text" name="nombre" required> <br>
+     	<input type="text" name="nombre" required placeholder="Escriba el Nombre"> <br>
      	<label class="etiquetas">Descripcion del curso</label><br>
-         <textarea name="descripcion" required></textarea><br>
-         <label for="">Se creara un directorio para almacenar todos los datos  de este curso que tendra el mismo nombre que el codigo de curso</label><br>
+         <textarea name="descripcion" required placeholder="Escriba la descripcion"></textarea><br>
+         <p>Se creara un directorio para almacenar todos los datos  de este curso que tendra el mismo nombre que el codigo de curso</p><br>
 
      	<label for="">Foto del curso</label>
      	<input type="file" accept="image/*" name="urlFoto" required><br> 
      	<div id="warning"></div>	
      	<button id="crearCurso">Crear curso</button>
-     </form>
+	 </form>
+
      <!--Este div se crea cuando el curso se ha creado exitosamente-->
 
     <script>

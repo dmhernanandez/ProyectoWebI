@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>Cursos creados
-	</title>
+    <meta charset="utf-8">
+    <title>Cursos creados
+    </title>
+    <link rel="stylesheet" href="./css/Admin.css">
 </head>
+
 <body>
- <form >
-	  <label for="">Buscar curso</label>
-	  <input type="text" id="buscar">
-	  <table border="1px solid">
-		<thead>
-			<tr>
-				<th>Codigo</th>
-				<th>Curso</th>
-				<th colspan="2">Opciones</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>hola</td>
-				<td>amigo</td>
-				<td>un gusto</td>
-				<td>bienvenido</td>
-				<td>abda </td>
-			</tr>
-		</tbody>
-	  </table>
-	  </form>
+    <form>
+
+        <label for="">Buscar curso</label>
+        <input type="text" id="buscar">
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Curso</th>
+                    <th colspan="2">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>hola</td>
+                    <td>amigo</td>
+                    <td>un gusto</td>
+                    <td>bienvenido</td>
+                    <td>abda </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
 </body>
 
 <script>
-document.querySelector("body").onload=function(){
+    document.querySelector("body").onload = function() {
 
-  let TERMINO_PETICION=4;
-  let COMPLETO_PETICION=200;
-  let url="php/crearCursos/obtenerDatos.php";
-  let datos=new FormData();
-  datos.append("consultarDatos","consulta");
-  let peticion=new XMLHttpRequest();
-  peticion.open("POST",url,true);
-  peticion.send(datos); 
-	 peticion.onreadystatechange=function()
-	 {		
-		 if(peticion.readyState==TERMINO_PETICION && peticion.status==COMPLETO_PETICION)
-		  {
-			  
-			if(peticion.response=="error")
-			  alert("Se a producido un error al recuperar los dato");
-			else
-				{
-					document.querySelector("tbody").innerHTML=peticion.response;
-				}
+            let TERMINO_PETICION = 4;
+            let COMPLETO_PETICION = 200;
+            let url = "php/crearCursos/obtenerDatos.php";
+            let datos = new FormData();
+            datos.append("consultarDatos", "consulta");
+            let peticion = new XMLHttpRequest();
+            peticion.open("POST", url, true);
+            peticion.send(datos);
+            peticion.onreadystatechange = function() {
+                if (peticion.readyState == TERMINO_PETICION && peticion.status == COMPLETO_PETICION) {
 
-		  }
-	 }
+                    if (peticion.response == "error")
+                        alert("Se a producido un error al recuperar los dato");
+                    else {
+                        document.querySelector("tbody").innerHTML = peticion.response;
+                    }
+
+                }
+            }
 
 
-}	
-//------------------------------------------------------------------------
-
+        }
+        //------------------------------------------------------------------------
 </script>
+
 </html>
