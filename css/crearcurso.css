@@ -1,0 +1,133 @@
+form {
+    width: 75%;
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+    position: absolute;
+    left: 150px;
+    top: 100px;
+	
+}
+body {
+     background: linear-gradient(to right, #1891C9, #600986); 
+}
+
+p{
+	font-size: 10px;
+	color: antiquewhite;
+}
+/* label {
+    font-size: 208px;
+    display: block;
+    ordenamos los labels
+    width: 100%;
+} */
+
+button {
+    width: 120px;
+    height: 35px;
+    background-color: #0f8fe4;
+}
+
+#foto{
+   position: relative ;
+   background-color: azure;
+    width: 40%;
+}
+
+/* #foto>img{
+	width: 200px;
+	width: 200px;
+} */ 	
+.etiquetas {
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #024f63;
+    color: white;
+}
+ select,textarea, input:not([type="file"]) {
+    margin-bottom: 20px;
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    max-height: 300px;
+}
+
+#logoActual{
+    width: 13em;
+    height: 12em;
+}
+
+input:focus {
+    border: 1px solid #1668C4;
+    /*color al boton al precionar*/
+}
+
+input[type="submit"] {
+    margin-bottom: 0px;
+    /*background:#1668C4;
+	color:#fff;
+	border:none;*/
+}
+
+input[type="submit"]:hover {
+    background: #1668C8;
+    cursor: pointer;
+    /*el cursor se muestra la manito*/
+}
+/* 
+form {
+    width: 25%;
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+}
+
+label {
+    font-size: 12px;
+    display: block;
+    ordenamos los labels
+    width: 100%;
+}
+
+input,
+textarea {
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+img {
+    padding: 10px;
+    display: block;
+}
+
+textarea {
+    resize: vertical;
+    max-height: 300px;
+}
+
+input:focus {
+    border: 1px solid #1668C4;
+    color al boton al precionar
+}
+
+input[type="submit"] {
+    margin-bottom: 0px;
+    background:#1668C4;
+	color:#fff;
+	border:none;
+}
+
+input[type="submit"]:hover {
+    background: #1668C8;
+    cursor: pointer;
+    el cursor se muestra la manito
+}   */

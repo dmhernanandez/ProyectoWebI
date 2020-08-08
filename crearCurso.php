@@ -28,13 +28,45 @@
      	<label class="etiquetas">Código de curso</label><br>
      	<input type="text" name="codigo" required placeholder="Escriba el Codigo">  <br>
      	<label class="etiquetas">Nombre del cuso</label><br>
-     	<input type="text" name="nombre" required placeholder="Escriba el Nombre"> <br>
-     	<label class="etiquetas">Descripcion del curso</label><br>
-         <textarea name="descripcion" required placeholder="Escriba la descripcion"></textarea><br>
-         <p>Se creara un directorio para almacenar todos los datos  de este curso que tendra el mismo nombre que el codigo de curso</p><br>
+     	<input type="text" name="nombre" required placeholder="Escriba el Nombre"> <br><br>
+        <label class="etiquetas">Seleccione una cateria para el curso</label><br>
 
-     	<label for="">Foto del curso</label>
-     	<input type="file" accept="image/*" name="urlFoto" required><br> 
+        	<?php 
+			 include 'php/conexion.php';
+			  $query= "SELECT nombre FROM categorias";
+			  $resultado=mysqli_query($conexion,$query);
+			if($resultado)
+			{
+				echo "<select name=categoria>";
+				 while($opcion=mysqli_fetch_assoc($resultado))
+			         echo  "<option>".$opcion["nombre"]."</option>";
+				 echo "</select><br><br>";
+			}
+		    else
+				echo "error";
+			
+			?>
+     	<label class="etiquetas">Descripcion del curso</label><br>
+        <textarea name="descripcion" required placeholder="Escriba la descripcion"></textarea><br><br>
+         <label class="etiquetas">Lo que ofrece el curso al usuario</label><br>
+         <p>En este campo se colocara lo que el curso ofrece al usuario, separando cada item con una coma.</p>
+        <textarea name="oferta" required placeholder="Escriba la descripcion"></textarea><br><br>
+         <label class="etiquetas">Habilidades que ganara el usario al tomar el curso</label><br>
+          <p>En este campo se escribira lo que el usuario aprendera una vez que termine el curso, separando cada item con una coma.</p>
+        <textarea name="habilidades" required placeholder="Escriba la descripcion"></textarea><br>
+        <label class="etiquetas">Estado del curso</label><br>
+        <p>Cuando establezca el estado en inactivo no sera visible en la pagina de cursos y no se podra seleccionar para inscribir.</p>
+        <select name="estado">
+        	<option >Activo</option>
+        	<option>Inactivo</option>
+        </select>
+         <div id="foto">
+         	 <label class="etiquetas">Foto del curso</label><br>
+     	     <input type="file" accept="image/*" name="logo" required><br>
+     	     <p>Se creara un directorio para almacenar todos los datos  de este curso que tendra el mismo nombre que el codigo de curso</p>
+     	     <!--img src="imagenes/curso-virtual.jpg" alt=""-->
+         </div>
+     	
      	<div id="warning"></div>	
      	<button id="crearCurso">Crear curso</button>
 	 </form>
@@ -78,12 +110,14 @@
 			datos.append("nombre",dat[0])
 		  */
 		  //Creamos la ruta donde se hara la consulta
-		  var url="php/crearCursos/registrarCurso.php";
+		  var url="php/crearCursos/Curso.php";
 		  
 		  var peticion= new XMLHttpRequest();
+		  let datos=new FormData(document.querySelector("form"));
+		  datos.append("accion","crear");
 		  
 		  peticion.open("POST",url,true); //Establezco el metodo, el archivo de peticion y desimos que la peticion es asincrona
-		  peticion.send(new FormData(document.querySelector("form")));
+		  peticion.send(datos);
 		  
 		  peticion.onreadystatechange=function()
 		  {

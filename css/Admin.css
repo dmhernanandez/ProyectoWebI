@@ -1,0 +1,23 @@
+body {
+  /* background: linear-gradient(to right, #1891C9, #600986);*/
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #5DADE2;
+}
+
+.op {
+    text-decoration: none;
+}

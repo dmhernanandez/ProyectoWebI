@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Cursos creados
     </title>
-    <link rel="stylesheet" href="./css/Admin.css">
+    <link rel="stylesheet" href="css/Admin.css">
 </head>
 
 <body>
@@ -22,13 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>hola</td>
-                    <td>amigo</td>
-                    <td>un gusto</td>
-                    <td>bienvenido</td>
-                    <td>abda </td>
-                </tr>
+            <!--Aqui se cargaran las filas de los cursos de la base de datos-->
             </tbody>
         </table>
     </form>
@@ -39,9 +33,9 @@
 
             let TERMINO_PETICION = 4;
             let COMPLETO_PETICION = 200;
-            let url = "php/crearCursos/obtenerDatos.php";
+            let url = "php/crearCursos/Curso.php";
             let datos = new FormData();
-            datos.append("consultarDatos", "consulta");
+            datos.append("accion", "consultar");
             let peticion = new XMLHttpRequest();
             peticion.open("POST", url, true);
             peticion.send(datos);
@@ -59,7 +53,7 @@
 
 
         }
-        //------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
 </script>
 
 </html>

@@ -18,10 +18,21 @@ function subirArchivo($archivo, $directorio)
 }
 
 //con esta funcion eliminamos los archivos y directorios
-function eliminarArchivo()
+function eliminarArchivo($url)
 {
-	
- 
+    //Retorna 1 si se realizo con exito
+    //Retorna 2 si el parametor pasado no es un archivo
+    //Retorna 0 si no se pudo borrar el archivo
+    if(is_file($url)){
+        if(unlink($url))
+        {
+            return 1;
+        }
+        else
+            return 0;
+    }
+    else
+        return 2;
 }
 
 //Con esta funcion eliminamos un directorio
