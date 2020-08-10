@@ -33,13 +33,13 @@
 
         	<?php 
 			 include 'php/conexion.php';
-			  $query= "SELECT nombre FROM categorias";
+			  $query= "SELECT nombre_categoria FROM categorias";
 			  $resultado=mysqli_query($conexion,$query);
 			if($resultado)
 			{
 				echo "<select name=categoria>";
 				 while($opcion=mysqli_fetch_assoc($resultado))
-			         echo  "<option>".$opcion["nombre"]."</option>";
+			         echo  "<option>".$opcion["nombre_categoria"]."</option>";
 				 echo "</select><br><br>";
 			}
 		    else

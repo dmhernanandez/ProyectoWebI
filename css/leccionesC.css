@@ -11,6 +11,7 @@ td {
 
 tr:hover {
     background-color: #5DADE2;
+    cursor: pointer;
 }
 
 form {
@@ -27,7 +28,7 @@ label {
     width: 100%;
 }
 
-input,
+input:not([type="file"]),
 textarea {
     margin-bottom: 20px;
     width: 100%;
@@ -45,9 +46,11 @@ textarea {
     max-height: 300px;
 }
 
-button,
-.tp {
-    background-color: #1891C9;
-    width: 120px;
+button, .tp {
+    background-color: #1891c9;
+    width: 200px;
     height: 30px;
+}
+.selected{
+    background-color: #3498db;
 }

@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
 
+$info = new SplFileInfo('foo.txt');
+
+echo $info->getExtension();
+
+$info = new SplFileInfo('photo.jpg');
+var_dump($info->getExtension());
+
+$info = new SplFileInfo('something.tar.gz');
+var_dump($info->getExtension());
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
