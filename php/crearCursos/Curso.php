@@ -2,11 +2,7 @@
 include '../conexion.php';
 include 'manejoArchivos.php';
 
-
-
-
 // Creamos el dirRaizecorio donde se almacenar el curso
-
 if($_POST["accion"]=="crear")
 {
 	$codigo=$_POST["codigo"];
@@ -14,18 +10,18 @@ if($_POST["accion"]=="crear")
 	$nombre=$_POST["nombre"];
 	$descripcion=$_POST["descripcion"];
 	$habilidades=$_POST["habilidades"];
-	$categoria="(SELECT id_categoria FROM categorias WHERE nombre='".$_POST["categoria"]."')";
+	$categoria="(SELECT id_categoria FROM categorias WHERE nombre_categoria='".$_POST["categoria"]."')";
 	$oferta=$_POST["oferta"];
 	$estado=$_POST["estado"];
 	if(crearDirectorio("../../".$dirRaiz))
 	{
 	  //$srcFoto=mysqli_real_escape_string($conexion,$dirRaiz."/".$_FILES["logo"]["name"]);
-      $srcLogo=$_FILES["logo"]["name"];
+      $srcLogo=nuevoNombre($_FILES["logo"],$codigo);//Creamos un nuevo nombre tomando su codigo como refenrecia;
 	  $query="INSERT INTO cursos VALUES(DEFAULT,'$codigo', '$nombre','$descripcion','$habilidades','$oferta','$estado','$srcLogo',".$categoria.")";
 	   $resultado=mysqli_query($conexion,$query);
 		if($resultado)  
 		{
-			if(subirArchivo($_FILES["urlFoto"], "../../".$dirRaiz))
+			if(subirArchivo($_FILES["logo"], "../../".$dirRaiz,$srcLogo))
 			{
 				echo 
 			  "<div class=registro-exitoso>
@@ -33,7 +29,7 @@ if($_POST["accion"]=="crear")
 						<h3>El curso a sido creado con exito!!!</h3>
 						<h2 name=nombreCurso>".$nombre."</h2>
 						<h3 name=codigoCurso>".$codigo."</h3><br>
-						<button onclick=window.location='#'>Subir Archivos</button>
+						<button onclick=window.location='leccionesCurso.php?codigo=".$codigo."'>Subir Archivos</button>
 						<button onclick=window.location='cursosAdmin.html'> Todos los cursos</button>
 				   </form>
 			   </div>";
@@ -71,9 +67,8 @@ elseif($_POST["accion"]=="consultar")
 				$filas.="<tr> <td>".$valor["codigo"]."</td>
 						  <td>".$valor["nombre"]."</td>
 						  <td><a href=actualizarCurso.php?codigo=".$valor["codigo"]."> Actualizar curso</a></td>
-						  <td><a href=actualizarCurso.html?codigo=".$valor["codigo"]."> Lecciones del curso</a></td>
+						  <td><a href=leccionesCurso.php?codigo=".$valor["codigo"]."> Lecciones del curso</a></td>
 						</tr>";
-               
 			}
 			$_POST=array();
 			echo $filas;
@@ -150,7 +145,7 @@ elseif($_POST["accion"]=="consultaActualizar")
 					 echo   "<label class=etiquetas>Cambiar imagen</label><br>
 					<input type=file accept=image/* name=logo ><br><br>
 					<label class=etiquetas>Logo actual</label><br>
-					<img src=".$valor["rutaLogo"]." id=logoActual>";
+					<img src=".$valor["rutaLogo"]." name=logoActual id=previewLogo>";
 	    }
 		
 		mysqli_close($conexion);
@@ -165,10 +160,10 @@ elseif ($_POST["accion"]=="actualizar") {
     $nombre = $_POST["nombre"];
     $descripcion = $_POST["descripcion"];
     $habilidades = $_POST["habilidades"];
-    $categoria = "(SELECT id_categoria FROM categorias WHERE nombre='" . $_POST["categoria"] . "')";
+    $categoria = "(SELECT id_categoria FROM categorias WHERE nombre_categoria='" . $_POST["categoria"] . "')";
     $oferta = $_POST["oferta"];
     $estado = $_POST["estado"];
-
+	$dirRaiz="cursos/".explode("/",$_POST["logoActual"])[1]; //Obtenemos el directorio raiz actual
     /*Extraigo el nombre del directorio actual del curso para compararlo con el codigo del curso ya que el nombre del directorio del
     curso tiene el mismo nombre que el codigo del curso y se es diferente entonces renombro el directorio con el nuevo codigo de curso.*/
     $dirActual = explode("/", $_POST["logoActual"])[1];
@@ -181,7 +176,6 @@ elseif ($_POST["accion"]=="actualizar") {
         else
         {
             exit("Error al renombrar el directorio");
-            $dirRaiz="cursos/".explode("/",$_POST["logoActual"])[1]; //En caso de no poderse renombrar queda con el nombre anterior
         }
 
     }
@@ -203,22 +197,25 @@ elseif ($_POST["accion"]=="actualizar") {
 	//Si el logo no esta vacio entonces realizamos una actualizacion, cambiando los archivos actualizaos
 	else
 	{
-		//$srcFoto=mysqli_real_escape_string($conexion,$dirRaiz."/".$_FILES["logo"]["name"]);
-        $srcLogo=$_FILES["logo"]["name"];
+       $srcLogo=nuevoNombre($_FILES["logo"],$codigo);//Creamos un nuevo nombre tomando su codigo como refenrecia
+
 		$query="UPDATE cursos SET codigo='$codigo',nombre='$nombre',descripcion='$descripcion',habilidades='$habilidades', 
                                 oferta='$oferta',estado='$estado',url_foto='$srcLogo',id_categoria=".$categoria." WHERE id_curso=".$idCurso."";
 		$resultado=mysqli_query($conexion,$query);
 		//Si se actualizo la base datos procedemos a subir el nuevo archivo
 		if($resultado)
 		{
-			if(subirArchivo($_FILES["logo"],"../../".$dirRaiz))//Si ese actualizo la base de datos entonces movemos los archivos a la carpeta del servidor
+			if(subirArchivo($_FILES["logo"], "../../".$dirRaiz, $srcLogo))//Si ese actualizo la base de datos entonces movemos los archivos a la carpeta del servidor
 			{
 				//Si el archivo se subio, entonces borramos el actual, logoActual contiene la ruta de la imagen actual
                 if(eliminarArchivo("../../".$_POST["logoActual"]))
 				{
-                   echo "Realizado";
+                   echo "realizado";
 				}
+                else
+                	echo "error";
 			}
+			echo "error";
 		}
 		else
 			echo mysqli_error($conexion);

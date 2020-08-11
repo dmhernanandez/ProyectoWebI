@@ -63,7 +63,7 @@
 
           let datos=new FormData(document.querySelector("form"));
           datos.append("accion","actualizar");
-          datos.append("logoActual",document.querySelector("#logoActual").getAttribute("src"))
+          datos.append("logoActual",document.querySelector("#previewLogo").getAttribute("src"))
           peticion.open("POST",url,true);
           peticion.send(datos);
           peticion.onreadystatechange=function()
@@ -76,11 +76,9 @@
                   }
                   else
                   {
-
-                      alert("Los datos se actualizaron con exito");
+                      alert("Los datos se actualizaron con exito ");
                       window.location='cursosAdmin.html';
                       //document.querySelector("form").innerHTML=peticion.response;
-
                   }
               }
           }
