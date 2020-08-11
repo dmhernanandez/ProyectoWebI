@@ -7,7 +7,8 @@
 }
 
 body {
-    background: linear-gradient(to right, #1891C9, #600986)
+    /*background-image: url("../images/fondo.jpeg");*/
+    background-color: #1891C9;
 }
 
 header {
@@ -141,7 +142,7 @@ article hr {
 .slider-1 {
     padding-top: 6.875rem;
     padding-bottom: 6.375rem;
-    background: linear-gradient(to right, #1891C9, #600986)
+    background: linear-gradient(to right, #1891C9, #1891C9)
 }
 
 .slider-1 .slider-container {

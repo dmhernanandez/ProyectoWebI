@@ -5,27 +5,65 @@
     <meta charset="utf-8">
     <title>Cursos creados
     </title>
-    <link rel="stylesheet" href="css/Admin.css">
+    <link rel="stylesheet" href="./css/Admin.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
 <body>
-    <form>
+    <header>
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cursos.html">Cursos</a>
+                </li>
+                <li><a href="iniciarSesion.html">Inciar Sesion</a></li>
+                <li><a href="registro.html">Registrar</a></li>
 
-        <label for="">Buscar curso</label>
-        <input type="text" id="buscar">
-        <table>
-            <thead>
-                <tr>
-                    <th>Codigo</th>
-                    <th>Curso</th>
-                    <th colspan="2">Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
-            <!--Aqui se cargaran las filas de los cursos de la base de datos-->
-            </tbody>
-        </table>
-    </form>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!------------------------------------------------------------------>
+    <div class="espana">
+
+
+        <article>
+            <form>
+                <i class='fas fa-search'></i>
+                <label for="">Buscar curso</label>
+                <input type="text" class='fas fa-search' name="search" placeholder="Busqueda...">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Curso</th>
+                            <th colspan="2">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>hola</td>
+                            <td>amigo</td>
+                            <td>un gusto</td>
+                            <td>bienvenido</td>
+                            <td> </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <button class="uno">Categoria</button>
+                <button class="dos">Categoria</button>
+                <button class="tres">Categoria</button>
+            </form>
+
+        </article>
+
+
+    </div>
+
 </body>
 
 <script>
@@ -33,9 +71,9 @@
 
             let TERMINO_PETICION = 4;
             let COMPLETO_PETICION = 200;
-            let url = "php/crearCursos/Curso.php";
+            let url = "php/crearCursos/obtenerDatos.php";
             let datos = new FormData();
-            datos.append("accion", "consultar");
+            datos.append("consultarDatos", "consulta");
             let peticion = new XMLHttpRequest();
             peticion.open("POST", url, true);
             peticion.send(datos);
@@ -53,7 +91,7 @@
 
 
         }
-//--------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------
 </script>
 
 </html>

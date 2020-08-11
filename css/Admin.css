@@ -1,10 +1,28 @@
 body {
-  /* background: linear-gradient(to right, #1891C9, #600986);*/
+    background-image: url("./fondo.jpeg");
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
+}
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text] {
+    width: 258px;
+    height: 20px;
 }
 
 th,
@@ -15,9 +33,88 @@ td {
 }
 
 tr:hover {
-    background-color: #5DADE2;
+    background-color: #7FBABE;
 }
 
 .op {
     text-decoration: none;
 }
+
+#buscar {
+    border: none;
+    width: 190px;
+    height: 20px;
+}
+
+label {
+    font-size: 20px;
+}
+
+button {
+    width: 115px;
+    height: 25px;
+    cursor: pointer;
+    border: none;
+}
+
+.uno {
+    background-color: #2E86C1;
+    border: none;
+    position: absolute;
+    left: 700px;
+    top: 100px;
+}
+
+.dos {
+    background-color: #85929E;
+    position: absolute;
+    left: 820px;
+    top: 100px;
+}
+
+.tres {
+    background-color: #48C9B0;
+    position: absolute;
+    left: 939px;
+    top: 100px;
+}
+
+
+/********************ARTICICLE*******************************/
+
+.espana {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+article {
+    background: rgba(52, 52, 110, 0.582);
+    padding: 20px;
+    margin: 20px 0;
+    color: #fff;
+    box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.24);
+}
+
+article h2 {
+    color: #fff;
+}
+
+article hr {
+    background: red;
+    height: 5px;
+    border: none;
+}
+
+article p {
+    line-height: 25px;
+}
+
+article h2,
+article p,
+article hr {
+    margin-bottom: 20px;
+}
+
+
+/*******************************************************************/
