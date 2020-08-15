@@ -1,29 +1,13 @@
-form {
-    width: 75%;
-    border: 1px solid #ccc;
-    margin: 20px;
-    padding: 20px;
-    position: absolute;
-    left: 150px;
-    top: 100px;
-}
 
 body {
     background-color: #1891C9;
 }
-
-p {
-    font-size: 10px;
-    color: antiquewhite;
-}
-
-
-/* label {
+ label {
     font-size: 208px;
     display: block;
-    ordenamos los labels
+    /* ordenamos los labels */
     width: 100%;
-} */
+}
 
 button {
     width: 120px;
@@ -31,17 +15,7 @@ button {
     background-color: #0f8fe4;
 }
 
-#foto {
-    position: relative;
-    background-color: azure;
-    width: 40%;
-}
 
-
-/* #foto>img{
-	width: 200px;
-	width: 200px;
-} */
 
 .etiquetas {
     font-size: 20px;
@@ -56,7 +30,7 @@ select,
 textarea,
 input:not([type="file"]) {
     margin-bottom: 20px;
-    width: 90%;
+    width: 50%;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -73,18 +47,93 @@ textarea {
 
 input:focus {
     border: 1px solid #1668C4;
-    /*color al boton al precionar*/
+    color al boton al precionar
 }
 
 input[type="submit"] {
     margin-bottom: 0px;
-    /*background:#1668C4;
+    :#1668C4;
 	color:#fff;
-	border:none;*/
+	border:none;
 }
 
 input[type="submit"]:hover {
     background: #1668C8;
     cursor: pointer;
-    /*el cursor se muestra la manito*/
+  el cursor se muestra la manito
 }
+/********************ARTICICLE*******************************/
+
+.espana {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+article {
+    background: rgba(52, 52, 110, 0.582);
+    padding: 20px;
+    margin: 20px 0;
+    color: #fff;
+    box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.24);
+}
+
+article h2 {
+    color: #fff;
+}
+
+article hr {
+    background: red;
+    height: 5px;
+    border: none;
+}
+
+article p {
+    line-height: 25px;
+}
+
+article h2,
+article p,
+article hr {
+    margin-bottom: 20px;
+}
+
+
+/*******************************************************************/
+
+.descrip {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+article {
+    background: rgba(52, 52, 110, 0.582);
+    padding: 20px;
+    margin: 20px 0;
+    color: #fff;
+    box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.24);
+}
+
+article h2 p {
+    color: #fff;
+}
+
+article hr {
+    background: red;
+    height: 5px;
+    border: none;
+}
+
+article p {
+    line-height: 25px;
+}
+
+article h2,
+article p,
+article hr {
+    margin-bottom: 20px;
+}
+
+
+/****************************/

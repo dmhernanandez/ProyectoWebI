@@ -11,9 +11,9 @@
 </head>
 <body>
  <?php
-     include 'php/conexion.php';
+     include './php/conexion.php';
      $query = "SELECT url_documento, nombre_leccion AS nombre, CONCAT('cursos/',codigo,'/lecciones/',lecciones.url_documento) AS ruta
-               FROM lecciones JOIN cursos USING(id_curso) 
+               FROM lecciones JOIN cursos USING(id_curso)
                WHERE id_leccion=".$_GET["idLeccion"];
      $resultado=mysqli_query($conexion,$query);
      if($resultado)

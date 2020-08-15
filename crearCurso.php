@@ -13,25 +13,29 @@
 	  <header>
         <nav class="navegacion">
             <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="cursos.html">Cursos</a>
-                </li>
-                <li><a href="iniciarSesion.html">Inciar Sesion</a></li>
-                <li><a href="registro.html">Registrar</a></li>
+                <li><a href="crearCurso.php">Crear Curso</a></li>
+
+                <li><a href="cursosAdmin.html">Administrar Cursos</a></li>
+                <li><a href="IniciarSesion.html">Inciar Sesion</a></li>
+							<li><a href="instructores.html">Registrar</a></li>
 
             </ul>
 
         </nav>
     </header>
     <!--El enctype se usa para desirle que son multiples archivos los que vamos a subir-->
+		<div class="espana">
+
+
+				<article>
      <form  enctype="multipart/form-data" >
      	<label class="etiquetas">Código de curso</label><br>
      	<input type="text" name="codigo" required placeholder="Escriba el Codigo">  <br>
      	<label class="etiquetas">Nombre del cuso</label><br>
      	<input type="text" name="nombre" required placeholder="Escriba el Nombre"> <br><br>
-        <label class="etiquetas">Seleccione una cateria para el curso</label><br>
+        <label class="etiquetas">Seleccione una categoria para el curso</label><br>
 
-        	<?php 
+        	<?php
 			 include 'php/conexion.php';
 			  $query= "SELECT nombre_categoria FROM categorias";
 			  $resultado=mysqli_query($conexion,$query);
@@ -40,13 +44,16 @@
 				echo "<select name=categoria>";
 				 while($opcion=mysqli_fetch_assoc($resultado))
 			         echo  "<option>".$opcion["nombre_categoria"]."</option>";
-				 echo "</select><br><br>";
+				 echo "</select>
+	<label class='etiquetas'>Asignar Un Instructor</label><br>
+				 <select> </select><br><br>";
 			}
 		    else
 				echo "error";
-			
+
 			?>
-     	<label class="etiquetas">Descripcion del curso</label><br>
+			 <label class="etiquetas">Descripcion del Curso</label><br>
+     <br>
         <textarea name="descripcion" required placeholder="Escriba la descripcion"></textarea><br><br>
          <label class="etiquetas">Lo que ofrece el curso al usuario</label><br>
          <p>En este campo se colocara lo que el curso ofrece al usuario, separando cada item con una coma.</p>
@@ -66,10 +73,15 @@
      	     <p>Se creara un directorio para almacenar todos los datos  de este curso que tendra el mismo nombre que el codigo de curso</p>
      	     <!--img src="imagenes/curso-virtual.jpg" alt=""-->
          </div>
-     	
-     	<div id="warning"></div>	
+
+     	<div id="warning"></div>
      	<button id="crearCurso">Crear curso</button>
 	 </form>
+
+			 </article>
+
+
+	 </div>
 
      <!--Este div se crea cuando el curso se ha creado exitosamente-->
 
@@ -78,7 +90,7 @@
 		event.stopPropagation();
 	    event.preventDefault();
 	  });
-		
+
 //---------------------------------------------------------------------------------------------------
 	  document.querySelector("#crearCurso").onclick=function()
 	  {
@@ -88,21 +100,21 @@
 			     document.querySelector("#warning").innerHTML="<p class=warning-campos-incompletos>Debes llenar todos los campos y subir una foto</p>";
 
 				 let camposRequeridos= document.querySelectorAll("textarea:required, input:required");
-				  
+
 				for(i=0;i<camposRequeridos.length;i++)
 					{
 					 console.log(camposRequeridos[i].value);
 						if(camposRequeridos[i].value===""){
-							
+
 							camposRequeridos[i].classList.add("inputs-requeridos");
 						}
 					}
-				
+
 						 //valor.setAttribute("class","inputs-requeridos");
 
 				 return;
 		     }
-		 
+
 		  let TERMINO_PETICION=4;
 	      let COMPLETO_PETICION=200;
 		  /*
@@ -111,14 +123,14 @@
 		  */
 		  //Creamos la ruta donde se hara la consulta
 		  var url="php/crearCursos/Curso.php";
-		  
+
 		  var peticion= new XMLHttpRequest();
 		  let datos=new FormData(document.querySelector("form"));
 		  datos.append("accion","crear");
-		  
+
 		  peticion.open("POST",url,true); //Establezco el metodo, el archivo de peticion y desimos que la peticion es asincrona
 		  peticion.send(datos);
-		  
+
 		  peticion.onreadystatechange=function()
 		  {
 				if(peticion.readyState==TERMINO_PETICION && peticion.status==COMPLETO_PETICION)
@@ -129,13 +141,13 @@
 					}
 				    else
 					 {
-						 document.querySelector("form").innerHTML=peticion.response; 
+						 document.querySelector("form").innerHTML=peticion.response;
 					 }
 				}
 		  }
 	  }
 //----------------------------------------------------------------------------------------------
-	
+
 	</script>
 </body>
 </html>
