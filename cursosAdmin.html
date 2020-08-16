@@ -6,6 +6,7 @@
     <title>Cursos creados
     </title>
     <link rel="stylesheet" href="./css/Admin.css">
+    <link rel="stylesheet" href="./css/estiloTablas.css">
     <link rel="stylesheet" href="./css/menu.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
@@ -16,7 +17,6 @@
       <nav class="navegacion">
           <ul class="menu">
               <li><a href="crearCurso.php">Crear Curso</a></li>
-            
               <li><a href="cursosAdmin.html">Administrar Cursos</a></li>
               <li><a href="IniciarSesion.html">Inciar Sesion</a></li>
               <li><a href="instructores.html">Registrar</a></li>
@@ -34,8 +34,8 @@
             <form>
                 <i class='fas fa-search'></i>
                 <label for="">Buscar curso</label>
-                <input type="text" class='fas fa-search' name="search" placeholder="Busqueda...">
-                <table>
+                <input type="text"  id="buscar" placeholder="Busca un curso...  ">
+                <table id="cursos-registrados">
                     <thead>
                         <tr>
                             <th>Codigo</th>
@@ -44,20 +44,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>hola</td>
-                            <td>amigo</td>
-                            <td>un gusto</td>
-                            <td>bienvenido</td>
-                            <td> </td>
-                        </tr>
                     </tbody>
                 </table>
 
 
-                <button class="uno">Categoria</button>
-                <button class="dos">Categoria</button>
-                <button class="tres">Categoria</button>
             </form>
 
         </article>
@@ -72,9 +62,9 @@
 
             let TERMINO_PETICION = 4;
             let COMPLETO_PETICION = 200;
-            let url = "php/crearCursos/obtenerDatos.php";
+            let url = "php/crearCursos/Curso.php";
             let datos = new FormData();
-            datos.append("consultarDatos", "consulta");
+            datos.append("accion", "consultar");
             let peticion = new XMLHttpRequest();
             peticion.open("POST", url, true);
             peticion.send(datos);
@@ -89,10 +79,29 @@
 
                 }
             }
-
-
         }
         //------------------------------------------------------------------------
+    document.querySelector("#buscar").onkeyup=function () {
+        let TERMINO_PETICION = 4;
+        let COMPLETO_PETICION = 200;
+        let url = "php/crearCursos/Curso.php";
+        let datos = new FormData();
+        datos.append("filtro", document.querySelector("#buscar").value)
+        datos.append("accion", "buscar");
+        let peticion = new XMLHttpRequest();
+        peticion.open("POST", url, true);
+        peticion.send(datos);
+        peticion.onreadystatechange = function () {
+            if (peticion.readyState == TERMINO_PETICION && peticion.status == COMPLETO_PETICION) {
+
+                if (peticion.response == "error")
+                    alert("Se a producido un error al recuperar los dato");
+                else
+                    document.querySelector("tbody").innerHTML = peticion.response;
+
+            }
+        }
+    }
 </script>
 
 </html>

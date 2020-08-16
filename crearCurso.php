@@ -30,30 +30,36 @@
 				<article>
      <form  enctype="multipart/form-data" >
      	<label class="etiquetas">Código de curso</label><br>
-     	<input type="text" name="codigo" required placeholder="Escriba el Codigo">  <br>
+     	<input type="text" name="codigo" required placeholder="Escriba el Codigo"><br>
      	<label class="etiquetas">Nombre del cuso</label><br>
      	<input type="text" name="nombre" required placeholder="Escriba el Nombre"> <br><br>
         <label class="etiquetas">Seleccione una categoria para el curso</label><br>
 
         	<?php
 			 include 'php/conexion.php';
-			  $query= "SELECT nombre_categoria FROM categorias";
+			  $query= "SELECT id_categoria, nombre_categoria FROM categorias";
 			  $resultado=mysqli_query($conexion,$query);
-			if($resultado)
-			{
-				echo "<select name=categoria>";
-				 while($opcion=mysqli_fetch_assoc($resultado))
-			         echo  "<option>".$opcion["nombre_categoria"]."</option>";
-				 echo "</select>
-	<label class='etiquetas'>Asignar Un Instructor</label><br>
-				 <select> </select><br><br>";
-			}
-		    else
-				echo "error";
+                if($resultado)
+                {
+                    echo "<select name=categoria>";
+                     while($opcion=mysqli_fetch_assoc($resultado))
+                         echo  "<option value=".$opcion["id_categoria"].">".$opcion["nombre_categoria"]."</option>";
+                     echo "</select>";
+                }
+                //Con esta consulta extraemos los nombres de los instructores
 
+                $query= "SELECT idinstructores, CONCAT(Nombres,' ',Apellidos) as nombre FROM instructores";
+                $resultado=mysqli_query($conexion,$query);
+                if($resultado)
+                {
+                    echo "<label class=etiquetas>Seleccione un instructor a este curso</label><br>
+                            <select name=instructor>";
+                    while($opcion=mysqli_fetch_assoc($resultado))
+                        echo  "<option value=".$opcion["idinstructores"].">".$opcion["nombre"]."</option>";
+                    echo "</select>";
+                }
 			?>
-			 <label class="etiquetas">Descripcion del Curso</label><br>
-     <br>
+         <label class="etiquetas">Descripcion del Curso</label><br>
         <textarea name="descripcion" required placeholder="Escriba la descripcion"></textarea><br><br>
          <label class="etiquetas">Lo que ofrece el curso al usuario</label><br>
          <p>En este campo se colocara lo que el curso ofrece al usuario, separando cada item con una coma.</p>

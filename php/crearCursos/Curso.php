@@ -10,14 +10,15 @@ if($_POST["accion"]=="crear")
 	$nombre=$_POST["nombre"];
 	$descripcion=$_POST["descripcion"];
 	$habilidades=$_POST["habilidades"];
-	$categoria="(SELECT id_categoria FROM categorias WHERE nombre_categoria='".$_POST["categoria"]."')";
+	$categoria=$_POST["categoria"];
+	$instructor=$_POST["instructor"];
 	$oferta=$_POST["oferta"];
 	$estado=$_POST["estado"];
 	if(crearDirectorio("../../".$dirRaiz))
 	{
 	  //$srcFoto=mysqli_real_escape_string($conexion,$dirRaiz."/".$_FILES["logo"]["name"]);
       $srcLogo=nuevoNombre($_FILES["logo"],$codigo);//Creamos un nuevo nombre tomando su codigo como refenrecia;
-	  $query="INSERT INTO cursos VALUES(DEFAULT,'$codigo', '$nombre','$descripcion','$habilidades','$oferta','$estado','$srcLogo',".$categoria.")";
+	  $query="INSERT INTO cursos VALUES(DEFAULT,'$codigo', '$nombre','$descripcion','$habilidades','$oferta','$estado','$srcLogo',".$categoria.",".$instructor.")";
 	   $resultado=mysqli_query($conexion,$query);
 		if($resultado)  
 		{
@@ -64,13 +65,12 @@ elseif($_POST["accion"]=="consultar")
 		{
 			while($valor=mysqli_fetch_assoc($resultado))
 			{
-				$filas.="<tr> <td>".$valor["codigo"]."</td>
-						  <td>".$valor["nombre"]."</td>
-						  <td><a href=actualizarCurso.php?codigo=".$valor["codigo"]."> Actualizar curso</a></td>
-						  <td><a href=leccionesCurso.php?codigo=".$valor["codigo"]."> Lecciones del curso</a></td>
+				$filas.="<tr> <td class=contenido-tabla>".$valor["codigo"]."</td>
+						  <td class=contenido-tabla>".$valor["nombre"]."</td>
+						  <td><a href=actualizarCurso.php?codigo=".$valor["codigo"]." class='actualizarCurso'> Actualizar curso</a></td>
+						  <td><a href=leccionesCurso.php?codigo=".$valor["codigo"]." class='leccionesCurso'> Lecciones del curso</a></td>
 						</tr>";
 			}
-			$_POST=array();
 			echo $filas;
 			mysqli_close($conexion);
 		}
@@ -86,13 +86,10 @@ elseif($_POST["accion"]=="consultaActualizar")
 {
     
 	$categorias="";
-	$query="SELECT  id_curso,codigo,nombre,c.descripcion,habilidades,oferta,estado,
+	$query="SELECT  id_curso,codigo,nombre,descripcion,habilidades,oferta,estado,
             CONCAT('cursos/',codigo,'/',url_foto) AS rutaLogo,
-             nombre_categoria AS categoria FROM cursos c JOIN categorias cat USING (id_categoria)
+             id_categoria,id_instructor  FROM cursos
             WHERE codigo='".$_POST["codigo"]."'";
-
-	//Creamos una segunda consula para traer todos las categorias
-	$queryCategoria="SELECT nombre_categoria FROM categorias";
 	
 	$resultado=mysqli_query($conexion,$query);
 	if($resultado)
@@ -106,23 +103,49 @@ elseif($_POST["accion"]=="consultaActualizar")
 					  <input type=text name=nombre required value=".$valor["nombre"]."><br><br>
 				     <label class=etiquetas>Categoria</label><br>
 					 <select name=categoria>";//Creamos un select para mostrar todas las categorias que tenemos guardadas
-						 $resultadoCategoria=mysqli_query($conexion,$queryCategoria);
+						//Creamos una segunda consula para traer todos las categorias
+						$queryCategoria="SELECT id_categoria, nombre_categoria FROM categorias";
+						$resultadoCategoria=mysqli_query($conexion,$queryCategoria);
 						  if ($resultadoCategoria)
 						  {
 								while($value=mysqli_fetch_assoc($resultadoCategoria))
 								{
 								  //Este if se utiliza para seleccionar la categoria del curso actual
-								 if($value["nombre_categoria"]==$valor["categoria"])
-									 echo "<option selected >".$value["nombre_categoria"]."</option>";
+								 if($value["id_categoria"]==$valor["id_categoria"])
+									 echo "<option value=".$value["id_categoria"]." selected >".$value["nombre_categoria"]."</option>";
 								 else
-									echo "<option  >".$value["nombre_categoria"]."</option>";
+									echo "<option value=".$value["id_categoria"]." >".$value["nombre_categoria"]."</option>";
 								}  
 						  }
 						  else
-							   echo "<option >No se pudo cargar categorias</option>";
-
+						  {
+							  echo "<option value=0>No se pudo cargar categorias</option>";
+						  }
 			       echo  "</select><br>
-				    <label class=etiquetas>Descripcion</label><br>
+							<label class=etiquetas>Instructor asignado</label><br>
+						  <select name='instructor'>
+                         ";
+
+						$queryInstructor= "SELECT idinstructores, CONCAT(Nombres,' ',Apellidos) as nombre FROM instructores";
+						$resultadoInstructor=mysqli_query($conexion,$queryInstructor);
+						if ($resultadoInstructor)
+						{
+							while($value=mysqli_fetch_assoc($resultadoInstructor))
+							{
+								//Este if se utiliza para seleccionar la categoria del curso actual
+								if($value["idinstructores"]==$valor["id_instructor"])
+									echo "<option value=".$value["idinstructores"]." selected >".$value["nombre"]."</option>";
+								else
+									echo "<option value=".$value["idinstructores"]." >".$value["nombre"]."</option>";
+							}
+						}
+						else
+						{
+							echo "<option value=0>No se pudo cargar los instructores</option>";
+						}
+
+				echo "</select><br>	
+					<label class=etiquetas>Descripcion</label><br>
 					<textarea name=descripcion required>".$valor["descripcion"]."</textarea><br>
 					 <label class=etiquetas>Lo que ofrece el curso al usuario</label><br>
 					 <p>En este campo se colocara lo que el curso ofrece al usuario, separando cada item con una coma.</p>
@@ -160,7 +183,8 @@ elseif ($_POST["accion"]=="actualizar") {
     $nombre = $_POST["nombre"];
     $descripcion = $_POST["descripcion"];
     $habilidades = $_POST["habilidades"];
-    $categoria = "(SELECT id_categoria FROM categorias WHERE nombre_categoria='" . $_POST["categoria"] . "')";
+	$categoria=$_POST["categoria"];
+	$instructor=$_POST["instructor"];
     $oferta = $_POST["oferta"];
     $estado = $_POST["estado"];
 	$dirRaiz="cursos/".explode("/",$_POST["logoActual"])[1]; //Obtenemos el directorio raiz actual
@@ -185,7 +209,7 @@ elseif ($_POST["accion"]=="actualizar") {
 	if(empty($_FILES["logo"]["name"]))
 	{
 		$query="UPDATE cursos SET codigo='$codigo',nombre='$nombre',descripcion='$descripcion',habilidades='$habilidades', 
-                                oferta='$oferta',estado='$estado',id_categoria=".$categoria." WHERE id_curso=".$idCurso."";
+                                oferta='$oferta',estado='$estado',id_categoria=".$categoria.", id_instructor=".$instructor." WHERE id_curso=".$idCurso."";
 		$resultado=mysqli_query($conexion,$query);
 		if($resultado)
 		{
@@ -220,7 +244,35 @@ elseif ($_POST["accion"]=="actualizar") {
 		else
 			echo mysqli_error($conexion);
 	}
-
-
 }
+
+
+//Esta consulta devuelve cuando se busca
+elseif($_POST["accion"]=="buscar")
+{
+	if($conexion)
+	{
+		$filas="";
+		$query="SELECT codigo, nombre FROM cursos WHERE codigo like CONCAT('%','".$_POST["filtro"]."','%') or nombre like CONCAT('%','".$_POST["filtro"]."','%') ";
+		$resultado=mysqli_query($conexion,$query);
+		if($resultado)
+		{
+			while($valor=mysqli_fetch_assoc($resultado))
+			{
+				$filas.="<tr> <td class=contenido-tabla>".$valor["codigo"]."</td>
+						  <td class=contenido-tabla>".$valor["nombre"]."</td>
+						  <td><a href=actualizarCurso.php?codigo=".$valor["codigo"]." class='actualizarCurso'> Actualizar curso</a></td>
+						  <td><a href=leccionesCurso.php?codigo=".$valor["codigo"]." class='leccionesCurso'> Lecciones del curso</a></td>
+						</tr>";
+			}
+			echo $filas;
+			mysqli_close($conexion);
+		}
+		else
+			echo "error";
+	}
+	else
+		echo "error";
+}
+
 ?>

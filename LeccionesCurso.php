@@ -3,6 +3,7 @@
 	  <meta charset="utf-8">
 	  <title>Proyecto II parcial</title>
 	  <link href="css/leccionesC.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/estiloTablas.css">
 
  	</head>
 	<body>
@@ -60,7 +61,7 @@
                                <td>".$fila["nombre_leccion"]."</td>
                                <td>".$fila["descripcion"]."</td>
                                <td>".$fila["estado"]."</td>
-                               <td> <a href=mostrarLeccion.php?idLeccion=".$fila["id_leccion"]." target='_blank'>Ver leccion</a></td>
+                               <td> <a href=mostrarLeccion.php?idLeccion=".$fila["id_leccion"]." class=verLeccion target='_blank'>Ver leccion</a></td>
                              </tr>
                               ";
                        }

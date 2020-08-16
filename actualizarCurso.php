@@ -30,7 +30,7 @@
 		let datos=new FormData();   
 	    datos.append("accion","consultaActualizar");
 		datos.append("codigo","<?php echo $_GET["codigo"] ?>");
-		
+
 		peticion.open("POST",url,true);
 		peticion.send(datos);
 		   
@@ -41,7 +41,7 @@
 				if(peticion.response=="error")
 				{
 				    alert("Error al recuperar datos del curso");
-                   // document.querySelector("form").innerHTML=peticion.response;
+                 document.querySelector("#mostrarDatos").innerHTML=peticion.response;
 				}
 				else
 				{
