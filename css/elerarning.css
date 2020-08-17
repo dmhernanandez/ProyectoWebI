@@ -43,8 +43,7 @@ body {
 .abajo {
     width: 99.99%;
     height: 19.20px;
-    border-left: 6px solid red;
-    background-color: lightgrey;
+    background-color: #1891C9;
     float: left;
     padding: 25px;
     /*box-sizing: border-box;*/
@@ -58,13 +57,6 @@ body {
     position: absolute;
     left: 153px;
     top: 180px;
-}
-
-.subT {
-    color: black;
-    font-size: 20px;
-    position: absolute;
-    top: -10px;
 }
 
 .elear {
@@ -178,7 +170,7 @@ a {
 }
 
 .dropbtn {
-    background-color: #2E86C1;
+    background-color: #5DADE2;
     color: white;
     font-size: 16px;
     border: none;
@@ -207,7 +199,7 @@ a {
 }
 
 .dropdown-content a:hover {
-    background-color: #5DADE2;
+    background-color: #c4d3f6;
     color: white;
 }
 

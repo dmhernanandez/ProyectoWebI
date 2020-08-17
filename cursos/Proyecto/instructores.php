@@ -6,24 +6,12 @@
 	<meta name="viewport" content="widthdevicewidth , initial">
 	<meta http-equiv="X-UA-Compatible" content="ie-edge">
    <link rel="stylesheet" href="style.css">
-	   <link rel="stylesheet" href="./css/menu.css">
 	<title>Instructores</title>
 </head>
 <body>
-	<header>
-			<nav class="navegacion">
-					<ul class="menu">
-							<li><a href="crearCurso.php">Crear Curso</a></li>
-							<li><a href="cursosAdmin.html">Administrar Cursos</a></li>
-							<li><a href="instructores.php">Instructores</a></li>
 
-					</ul>
-
-			</nav>
-	</header>
 
 <section class="formu-regis">
-
 	<h4>Registro Instructores</h4>
   <form method="POST">
 <input class="info" type="text"  id="nombres" placeholder="Ingrese su Nombre" required>
@@ -35,7 +23,7 @@
 </form>
 </section>
 <section class="secboton">
-
+	
     <button class="botons" id="modificar">Modificar</button>
     <button class="botons" id="limpiar" type="reset">Limpiar</button>
     <button class="botons"id="eliminar">Eliminar</button>
@@ -108,7 +96,7 @@
         					});
 						fila.classList.add("selected");
         				}
-
+        			
         			fila.ondblclick = function (){
         				let datos = fila.children;
 
@@ -169,7 +157,7 @@
     	};
     		peticion.send(formData);
     }
-}
+} 
 document.querySelector("#modificar").onclick = function () {
 
         var datos = [];
@@ -235,7 +223,7 @@ document.querySelector("#modificar").onclick = function () {
         };
     }
 
-    document.querySelector("#cargar").onclick = function ()
+    document.querySelector("#cargar").onclick = function () 
     {
 
         var peticion = new XMLHttpRequest();
@@ -288,7 +276,7 @@ document.querySelector("#modificar").onclick = function () {
                          }
 
                 		});
-
+                  
                 }
             }
         }

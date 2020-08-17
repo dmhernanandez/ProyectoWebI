@@ -4,31 +4,16 @@
 	box-sizing:border-box;
 }
 
-body{
-	background-color: #1891C9;
-}
-.bt{
-	width: 350px;
-	height: 35px;
-	color:#fff;
-	background-color:#0878C6;
-	border: none;
-	cursor:pointer;
-}
-button{
-	cursor: pointer;
-}
-
 .formu-regis{
 	width:400px;
-	background:white;
+	background:   #072542;
 	padding: 30px;
 	margin:auto;
 	margin-top: 60px;
 	border-radius: 4px;
-	font-family:'Arial';
+	font-family:'Arial'; 
 	color:white;
-	color:#000;
+	font-color:white;
 	box-shadow: 7px 13px 37px #000;
 
 }
@@ -41,7 +26,7 @@ button{
 .info
 {
 	width: 100%;
-	background:#8DC5EC ;
+	background:  #072542  ;
 	padding:10px;
 	border-radius:4px;
 	margin-bottom:16px;
@@ -56,13 +41,13 @@ button{
 }
 
 body{
-background-image: url("./fondo.jpeg");
+	background-image: url('fondo.jpeg');
 }
 
 .tabla
 {
 	float: left;
-	background:#0878C6;
+	background: #072542;
 	text-align: center;
 	border-collapse: collapse;
 	border-radius: 4px;
@@ -91,24 +76,27 @@ th,td{
 
 .botons{
 	width:100%;
-	background:#0878C6;
+	background:#102775;
 	border:none;
 	padding:12px;
 	color:white;
 	margin:6px 0;
 	font-size:16px;
 	}
-
-
+	button:hover{
+    background-color: white;
+    color: #102775;
+    cursor: pointer;
+}
 	.secboton{
     float:right;
 	width:200px;
-	background:#fff;
+	background:   #072542;
 	padding: 30px;
 	margin-left:1000px;
 	margin-top: 40px;
 	border-radius: 4px;
-	font-family:'Arial';
+	font-family:'Arial'; 
 	color:white;
 	font-color:white;
 	box-shadow: 7px 13px 37px #000;

@@ -104,6 +104,12 @@ margin-left: 15px
     top: 820px;
     left: 150px;
 }
+.imagen{
+  width: 955px;
+  position: absolute;
+  top: 220px;
+  left: 150px;
+}
 
 .pv {
     font-size: 20px;
@@ -176,8 +182,8 @@ article{
 .dropdown {
     position: relative;
     display: inline-block;
-    left: 150px;
-    top: 80px;
+    left: 1050px;
+    top: -40px;
 }
 
 .dropdown-content {

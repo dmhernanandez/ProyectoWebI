@@ -21,41 +21,6 @@ header {
     top: -420px;
 }
 
-.logo{
-    position: absolute;
-    
-}
-
-.navegacion {
-    width: 100%;
-    margin: 15px auto;
-    background: white;
-}
-
-.navegacion ul {
-    list-style: none;
-}
-
-.menu>li {
-    margin: 15px auto;
-    position: relative;
-    display: inline-block;
-}
-
-.menu>li>a {
-    display: block;
-    padding: 15px 20px;
-    color: #353535;
-    font-family: 'Open sans';
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.menu li a:hover {
-    color: #2874A6;
-    transition: all .3s;
-}
-
 
 /********************ARTICICLE*******************************/
 
@@ -154,7 +119,7 @@ p {
 }
 
 .button {
-    background-color:#1ABC9C ;
+    background-color: #1ABC9C;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -171,11 +136,6 @@ p {
     color: white;
 }
 
-.logo {
-    position: absolute;
-    left: 809px;
-    top: 420px;
-}
 
 
 /* end of min-width width 1200px */
