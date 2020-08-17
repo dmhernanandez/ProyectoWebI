@@ -2,11 +2,7 @@
 	<head>
 	  <meta charset="utf-8">
 	  <title>Proyecto II parcial</title>
-<<<<<<< HEAD
 	  <link href="css/leccionesC.css" rel="stylesheet">
-=======
-	  <link href="css/cursosAdministrador.css" rel="stylesheet">
->>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
         <link rel="stylesheet" href="css/estiloTablas.css">
 
  	</head>
@@ -25,31 +21,30 @@
                   //Extraemos el nombre del curso
                  $getNombre=mysqli_query($conexion,"SELECT id_curso,nombre FROM cursos where codigo='".$codigoCurso."'");
                   while ($valor=mysqli_fetch_assoc($getNombre))
-                       echo "<label class='titulo'>Lecciones del curso \"".$valor["nombre"]."\"</label><br>
+                       echo "<label>Lecciones del curso ".$valor["nombre"]."</label>
                              <input type='hidden' value=".$valor["id_curso"]." name='idCurso'>
                              <input type=hidden value=".$_GET["codigo"]." name='codigoCurso'>";
                       //Estos input ocultos solo se usan para utilizarlos al guardar los datos
                   echo  "
-                        <label class='etiquetas'>Escriba el nombre de la leccion</label><br>
-                        <input type=text name=nombreLeccion required><br><br>
-                        <label class='etiquetas'>Escriba una breve descripcion sobre lo que tratara la lección</label><br>
-                        <textarea name=descripcion required></textarea><br><br>
-                        <label class='etiquetas'>Estado de la lección</label><br>
+                        <label>Escriba el nombre de la leccion</label>
+                        <input type=text name=nombreLeccion required>
+                        <label>Escriba una breve descripcion sobre lo que tratara la lección</label>
+                        <textarea name=descripcion required></textarea>
+                        <label>Estado del curso</label>
                         <select name=estado>
                             <option>Activo</option>
                             <option>Inactivo</option>
                         </select><br><br>
-                        <label class='etiquetas'>Cargar documento</label><br>
-                        <input type=file accept=application/pdf required name=leccion><br><br>
+                        <label >Cargar documento</label>
+                        <input type=file accept=application/pdf required name=leccion><br>
+                        <br/>
                          <button id=nuevo>Nueva leccion</button>
                         <button id=guardar>Registrar </button>
                         <button id=modificar disabled>Actualizar</button>
                         <button id=eliminar disabled>Eliminar</button>
-                       	<div id=mostrarLogo>
-						<img src=images/lecciones.png name=logoActual><br>
-					</div>
+                       
                     </form>
-                    <table id=tabla-lecciones>
+                    <table border=1px solid cellspacing=0px>
                         <thead>
                         <tr>
                             <th>#</th>

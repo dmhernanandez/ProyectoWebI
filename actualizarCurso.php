@@ -3,13 +3,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/cursosAdministrador.css">
+	<link rel="stylesheet" href="css/crearcurso.css">
 	<title>Actualizar Datos del curso</title>
 </head>
 <body>
-
   <form enctype="multipart/form-data">
-      <label class="titulo">Actualizar curso</label><br>
   	<div id="mostrarDatos">
   		<!--Aqui se mostra todos los datos obtenidos de la base de datos-->
   	</div>

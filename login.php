@@ -10,8 +10,6 @@
           <nav class="navegacion">
               <ul class="menu">
                   <li><a href="index.html">Inicio</a></li>
-                  <li><a href="cursos.html">Cursos</a>
-                  </li>
                   <li><a href="login.php">Inciar Sesion</a></li>
                   <li><a href="registro.php">Registrar</a></li>
 

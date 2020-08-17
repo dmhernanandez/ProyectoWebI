@@ -40,18 +40,14 @@ textarea {
     max-height: 300px;
 }
 
-<<<<<<< HEAD
 #logoActual {
-=======
-#mostrarLogo {
->>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
     width: 13em;
     height: 12em;
 }
 
 input:focus {
     border: 1px solid #1668C4;
-
+    color al boton al precionar
 }
 
 input[type="submit"] {
@@ -64,6 +60,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: #1668C8;
     cursor: pointer;
+  el cursor se muestra la manito
 }
 /********************ARTICICLE*******************************/
 
