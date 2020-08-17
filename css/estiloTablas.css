@@ -18,7 +18,11 @@ table{
     position: relative;
     background-color: #ffffff;
     font-family: Poppins;
+<<<<<<< HEAD
+    border-color: #85929E 	  ;
+=======
     border-color: #707B7C;
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
     border-radius: 4px;
 }
 th, td{
@@ -36,9 +40,14 @@ thead{
 tbody tr{
     cursor: pointer;
     font-size: 16px;
+<<<<<<< HEAD
+    height: 20px;
+}
+=======
     height: 25px;
 }
 
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 a{
     text-decoration: none;
 }
@@ -59,7 +68,11 @@ a{
 .verLeccion{
 
     background-color: green;
+<<<<<<< HEAD
+    padding: 6px;
+=======
     padding: 3px;
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
     color: whitesmoke;
     border-radius: 5px;
 }
@@ -94,9 +107,12 @@ a{
 
 }
 
+<<<<<<< HEAD
+=======
 /*Estilo de la tabla lecciones*/
 #tabla-lecciones{
     width: 80%;
     margin-left: 10%;
 }
 
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3

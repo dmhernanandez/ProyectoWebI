@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +9,49 @@
 	<meta name="viewport" content="widthdevicewidth , initial">
 	<meta http-equiv="X-UA-Compatible" content="ie-edge">
    <link rel="stylesheet" href="style.css">
+<<<<<<< HEAD
+	<title>Instructores</title>
+
+	<style media="screen">
+	tr:hover{
+			cursor: pointer;
+
+		}
+	</style>
+</head>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widthdevicewidth , initial">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+   <link rel="stylesheet" href="style.css">
+       <link rel="stylesheet" href="./css/menu.css">
+    <title>Instructores</title>
+</head>
+<body>
+    <header>
+            <nav class="navegacion">
+                    <ul class="menu">
+                            <li><a href="crearCurso.php">Crear Curso</a></li>
+                            <li><a href="cursosAdmin.html">Administrar Cursos</a></li>
+                            <li><a href="instructores.php">Instructores</a></li>
+
+                    </ul>
+
+            </nav>
+    </header>
+
+<section class="formu-regis">
+
+    <h4>Registro Instructores</h4>
+  <form method="POST">
+<input class="info" type="text"  name="nombres" placeholder="Ingrese su Nombre" required>
+<input class="info" type="text"  name="apellidos" placeholder="Ingrese su Apellido" required>
+<input class="info" type="email" name="correo" placeholder="Ingrese su Correo" required>
+<input class="info" type="number"  name="telefono" placeholder="Ingrese su Numero de telefono" required>
+<input class="info" type="text" name="profesion" placeholder="Ingrese su Profesion" required>
+=======
 	   <link rel="stylesheet" href="./css/menu.css">
 	<title>Instructores</title>
 </head>
@@ -31,6 +77,7 @@
 <input class="info" type="email" id="correo" placeholder="Ingrese su Correo" required>
 <input class="info" type="number"  id="telefono" placeholder="Ingrese su Numero de telefono" required>
 <input class="info" type="text" id="profesion" placeholder="Ingrese su Profesion" required>
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 <button class="botones" id="salvar"> Guardar </button>
 </form>
 </section>
@@ -60,6 +107,23 @@
 <script>
     var modificar = 0;
     document.querySelector("form").onsubmit=function(event){
+<<<<<<< HEAD
+        event.stopPropagation();
+        event.preventDefault();
+    }
+    document.querySelector("#salvar").addEventListener("click",function()
+    {
+        if(!document.querySelector("form").checkValidity()){
+            alert("Complete la informacion solicitada");
+            return;
+        }
+        var datos =[]
+        datos[0]=document.querySelector("[name=nombres]").value;
+        datos[1]=document.querySelector("[name=apellidos]").value;
+        datos[2]=document.querySelector("[name=correo]").value;
+        datos[3]=document.querySelector("[name=telefono]").value;
+        datos[4]=document.querySelector("[name=profesion]").value;
+=======
     	event.stopPropagation();
     	event.preventDefault();
     }
@@ -75,6 +139,7 @@
         datos[2]=document.querySelector("#correo").value;
         datos[3]=document.querySelector("#telefono").value;
         datos[4]=document.querySelector("#profesion").value;
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 
         var formData = new FormData();
 
@@ -89,6 +154,49 @@
 
         peticion.open("POST","acciones.php",true);
         peticion.onloadstart=function(){
+<<<<<<< HEAD
+            document.querySelector("#salvar").setAttribute("disabled",true);
+        }
+            peticion.onloaded=function(){
+                document.querySelector("#salvar").removeAttribute("disabled");
+            }
+            peticion.send(formData);
+
+            peticion.onreadystatechange = function(){
+                if(peticion.readyState == 4 && peticion.status ==200){
+                    if(peticion.response > 0){
+                        var fila = document.createElement("tr");
+                        fila.innerHTML =
+                        "<td>"+peticion.response+"</td><td>"+datos[0]+"</td><td>"+datos[1]+"</td><td>"+datos[2]+"</td><td>"+datos[3]+"</td><td>"+datos[4]+"</td>";
+                        fila.onclick = function(){
+                            document.querySelectorAll("tbody tr").forEach(function(value,index){
+                                value.classList.remove("selected");
+                            });
+                        fila.classList.add("selected");
+                        }
+
+                    fila.ondblclick = function (){
+                        let datos = fila.children;
+
+                        document.querySelector("[name=nombres]").value= datos[1].innerText;
+                        document.querySelector("[name=apellidos]").value= datos[2].innerText;
+                        document.querySelector("[name=correo]").value= datos[3].innerText;
+                        document.querySelector("[name=telefono]").value= datos[4].innerText;
+                        document.querySelector("[name=profesion]").value= datos[5].innerText;
+
+                        modificar = datos [0].innerText;
+
+                    }
+                    document.querySelector("tbody").appendChild(fila);
+                    document.querySelector("#limpiar").click();
+                    document.querySelector("#nombres").focus();
+
+                    return false;
+                }else {
+                    alert("No se pudieron guardar los datos: "+peticion.response);
+                }
+            }
+=======
         	document.querySelector("#salvar").setAttribute("disabled",true);
         }
         	peticion.onloaded=function(){
@@ -130,11 +238,16 @@
         			alert("No se pudieron guardar los datos: "+peticion.response);
         		}
         	}
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
         };
     });
         document.querySelector("#eliminar").onclick = function (){
  if (document.querySelectorAll(".selected").length == 0){
+<<<<<<< HEAD
+    alert("Debe seleccionar una fila");
+=======
  	alert("Debe seleccionar una fila");
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
  }else{
        var respuesta = confirm("¿Está seguro de eliminar el registro seleccionado?");
 
@@ -150,6 +263,27 @@
        peticion.open("POST","acciones.php",true);
 
        peticion.onloadstart = function (){
+<<<<<<< HEAD
+        document.querySelector("#eliminar").setAttribute("disabled",true);
+       };
+       peticion.onloadend = function (){
+        document.querySelector("#eliminar").removeAttribute("disabled");
+       };
+			   peticion.send(formData);
+       peticion.onreadystatechange=function(){
+        if(peticion.readyState == 4 && peticion.status ==200){
+            if(peticion.response == "ok"){
+                document.querySelectorAll(".selected").forEach(function (value, index){
+                    value.remove();
+                    alert("Registro Eliminado");
+                })
+            }else{
+                alert("No se pudo eliminar el registro");
+            }
+            }
+        };
+
+=======
        	document.querySelector("#eliminar").setAttribute("disabled",true);
        };
        peticion.onloadend = function (){
@@ -168,17 +302,26 @@
        		}
     	};
     		peticion.send(formData);
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
     }
 }
 document.querySelector("#modificar").onclick = function () {
 
         var datos = [];
 
+<<<<<<< HEAD
+        datos[0] = document.querySelector("[name=nombres]").value;
+        datos[1] = document.querySelector("[name=apellidos]").value;
+        datos[2] = document.querySelector("[name=correo]").value;
+        datos[3] = document.querySelector("[name=telefono]").value;
+        datos[4] = document.querySelector("[name=profesion]").value;
+=======
         datos[0] = document.querySelector("#nombres").value;
         datos[1] = document.querySelector("#apellidos").value;
         datos[2] = document.querySelector("#correo").value;
         datos[3] = document.querySelector("#telefono").value;
         datos[4] = document.querySelector("profesion").value;
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 
         if (modificar == "0") {
             alert("Por favor de doble clic a una fila a modificar");
@@ -250,7 +393,11 @@ document.querySelector("#modificar").onclick = function () {
         //     document.querySelector("#cargar").removeAttribute("disabled");
         // }
 
+<<<<<<< HEAD
+        peticion.send(null);
+=======
         peticion.send();
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
         peticion.onreadystatechange = function ()
          {
 
@@ -264,9 +411,15 @@ document.querySelector("#modificar").onclick = function () {
                 else
                 {
                     document.querySelector("tbody").innerHTML= peticion.response;
+<<<<<<< HEAD
+                    document.querySelectorAll("tbody tr").forEach(function (fila, index)
+                    {
+                        fila.onclick = function ()
+=======
             		document.querySelectorAll("tbody tr").forEach(function (fila, index)
             		{
 						fila.onclick = function ()
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
                          {
                             document.querySelectorAll("tbody tr").forEach(function (valor, index)
                             {
@@ -278,16 +431,28 @@ document.querySelector("#modificar").onclick = function () {
                        fila.ondblclick = function ()
                         {
                             let datos = fila.children;
+<<<<<<< HEAD
+                            document.querySelector("[name=nombre]").value = datos[1].innerText;
+                            document.querySelector("[name=apellido]").value = datos[2].innerText;
+                            document.querySelector("[name=correo]").value = datos[3].innerText;
+                            document.querySelector("[name=telefono]").value = datos[4].innerText;
+                            document.querySelector("[name=profesion]").value = datos[4].innerText;
+=======
                             document.querySelector("#nombre").value = datos[1].innerText;
                             document.querySelector("#apellido").value = datos[2].innerText;
                             document.querySelector("#correo").value = datos[3].innerText;
                             document.querySelector("#telefono").value = datos[4].innerText;
                             document.querySelector("#profesion").value = datos[4].innerText;
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
                             modificar = datos[0].innerText;
                             alert("doble click");
                          }
 
+<<<<<<< HEAD
+                        });
+=======
                 		});
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 
                 }
             }

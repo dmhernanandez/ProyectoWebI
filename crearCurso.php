@@ -22,11 +22,22 @@
         </nav>
     </header>
     <!--El enctype se usa para desirle que son multiples archivos los que vamos a subir-->
+<<<<<<< HEAD
+		<div class="espana">
+
+
+				<article>
+=======
     <div class="espana">
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
      <form  enctype="multipart/form-data" >
          <label class="titulo">Crear curso</label><br>
      	<label class="etiquetas">Código de curso</label><br>
+<<<<<<< HEAD
+     	<input type="text" name="codigo" required placeholder="Escriba el Codigo"><br>
+=======
      	<input type="text" name="codigo" required placeholder="Escriba el Codigo"><br><br>
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
      	<label class="etiquetas">Nombre del cuso</label><br>
      	<input type="text" name="nombre" required placeholder="Escriba el Nombre"> <br><br>
         <label class="etiquetas">Seleccione una categoria para el curso</label><br>
@@ -40,7 +51,11 @@
                     echo "<select name=categoria>";
                      while($opcion=mysqli_fetch_assoc($resultado))
                          echo  "<option value=".$opcion["id_categoria"].">".$opcion["nombre_categoria"]."</option>";
+<<<<<<< HEAD
+                     echo "</select>";
+=======
                      echo "</select><br><br>";
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
                 }
                 //Con esta consulta extraemos los nombres de los instructores
 
@@ -52,7 +67,11 @@
                             <select name=instructor>";
                     while($opcion=mysqli_fetch_assoc($resultado))
                         echo  "<option value=".$opcion["idinstructores"].">".$opcion["nombre"]."</option>";
+<<<<<<< HEAD
+                    echo "</select>";
+=======
                     echo "</select><br><br>";
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
                 }
 			?>
          <label class="etiquetas">Descripcion del Curso</label><br>
@@ -84,6 +103,10 @@
          </div>";
 	 </form>
 
+<<<<<<< HEAD
+			 </article>
+=======
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 
 
 	 </div>

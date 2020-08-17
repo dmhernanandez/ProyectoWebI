@@ -2,7 +2,11 @@
 	<head>
 	  <meta charset="utf-8">
 	  <title>Proyecto II parcial</title>
+<<<<<<< HEAD
+	  <link href="css/leccionesC.css" rel="stylesheet">
+=======
 	  <link href="css/cursosAdministrador.css" rel="stylesheet">
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
         <link rel="stylesheet" href="css/estiloTablas.css">
 
  	</head>

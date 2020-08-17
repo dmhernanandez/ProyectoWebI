@@ -18,6 +18,18 @@ body{
 button{
 	cursor: pointer;
 }
+<<<<<<< HEAD
+tbody tr {
+  background-color: #819FF7;
+  transition: background-color .3s;
+cursor: pointer;
+}
+
+tbody tr:hover {
+  background-color:#CEE3F6 ;
+}
+=======
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 
 .formu-regis{
 	width:400px;

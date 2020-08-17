@@ -116,7 +116,7 @@ form {
     height: 140px;
     position: absolute;
     left: -60.80px;
-    top: 25.60px;
+    top: -85.60px;
 }
 
 .perfil {
@@ -126,7 +126,7 @@ form {
     height: 140px;
     position: absolute;
     left: -60.80px;
-    top: 200.60px;
+    top: 80.60px;
 }
 
 #master {
@@ -168,6 +168,13 @@ a {
     text-decoration: none;
     color: black;
 }
+<<<<<<< HEAD
+.nomb_curso{
+  color:black;
+  font-size: 20px;
+}
+=======
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 
 .dropbtn {
     background-color: #5DADE2;
@@ -308,7 +315,7 @@ p {
 #curso1 {
     position: absolute;
     left: 210px;
-    top: 10px;
+    top: -80px;
 }
 
 
@@ -357,7 +364,7 @@ p {
 #curso2 {
     position: absolute;
     left: 550px;
-    top: 10px;
+    top: -80px;
 }
 
 
@@ -406,7 +413,7 @@ p {
 #curso3 {
     position: absolute;
     left: 900px;
-    top: 10px;
+    top: -80px;
 }
 
 

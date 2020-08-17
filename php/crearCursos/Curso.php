@@ -121,7 +121,11 @@ elseif($_POST["accion"]=="consultaActualizar")
 						  {
 							  echo "<option value=0>No se pudo cargar categorias</option>";
 						  }
+<<<<<<< HEAD
+			       echo  "</select><br>
+=======
 			       echo  "</select><br><br>
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 							<label class=etiquetas>Instructor asignado</label><br>
 						  <select name='instructor'>
                          ";
@@ -144,9 +148,15 @@ elseif($_POST["accion"]=="consultaActualizar")
 							echo "<option value=0>No se pudo cargar los instructores</option>";
 						}
 
+<<<<<<< HEAD
+				echo "</select><br>	
+					<label class=etiquetas>Descripcion</label><br>
+					<textarea name=descripcion required>".$valor["descripcion"]."</textarea><br>
+=======
 				echo "</select><br><br>	
 					<label class=etiquetas>Descripcion</label><br>
 					<textarea name=descripcion required>".$valor["descripcion"]."</textarea><br><br>
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 					 <label class=etiquetas>Lo que ofrece el curso al usuario</label><br>
 					 <p>En este campo se colocara lo que el curso ofrece al usuario, separando cada item con una coma.</p>
 					<textarea name=oferta required placeholder=Escriba lo que el curso ofrece>".$valor["oferta"]."</textarea><br><br>
