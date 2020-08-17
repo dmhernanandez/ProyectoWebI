@@ -18,7 +18,7 @@ table{
     position: relative;
     background-color: #ffffff;
     font-family: Poppins;
-    border-color: #85929E 	  ;
+    border-color: #707B7C;
     border-radius: 4px;
 }
 th, td{
@@ -36,8 +36,9 @@ thead{
 tbody tr{
     cursor: pointer;
     font-size: 16px;
-    height: 20px;
+    height: 25px;
 }
+
 a{
     text-decoration: none;
 }
@@ -58,7 +59,7 @@ a{
 .verLeccion{
 
     background-color: green;
-    padding: 6px;
+    padding: 3px;
     color: whitesmoke;
     border-radius: 5px;
 }
@@ -91,5 +92,11 @@ a{
     background-color: #1E8449;
     color:  white;
 
+}
+
+/*Estilo de la tabla lecciones*/
+#tabla-lecciones{
+    width: 80%;
+    margin-left: 10%;
 }
 
