@@ -40,7 +40,11 @@ textarea {
     max-height: 300px;
 }
 
+<<<<<<< HEAD
 #logoActual {
+=======
+#mostrarLogo {
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
     width: 13em;
     height: 12em;
 }

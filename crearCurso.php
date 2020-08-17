@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Crear Curso</title>
 	<script type="text/javascript" src="js/"></script>
-	<link rel="stylesheet" href="./css/crearcurso.css">
+	<link rel="stylesheet" href="./css/cursosAdministrador.css">
 	<link rel="stylesheet" href="./css/menu.css">
 
 </head>
@@ -22,13 +22,22 @@
         </nav>
     </header>
     <!--El enctype se usa para desirle que son multiples archivos los que vamos a subir-->
+<<<<<<< HEAD
 		<div class="espana">
 
 
 				<article>
+=======
+    <div class="espana">
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
      <form  enctype="multipart/form-data" >
+         <label class="titulo">Crear curso</label><br>
      	<label class="etiquetas">Código de curso</label><br>
+<<<<<<< HEAD
      	<input type="text" name="codigo" required placeholder="Escriba el Codigo"><br>
+=======
+     	<input type="text" name="codigo" required placeholder="Escriba el Codigo"><br><br>
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
      	<label class="etiquetas">Nombre del cuso</label><br>
      	<input type="text" name="nombre" required placeholder="Escriba el Nombre"> <br><br>
         <label class="etiquetas">Seleccione una categoria para el curso</label><br>
@@ -42,7 +51,11 @@
                     echo "<select name=categoria>";
                      while($opcion=mysqli_fetch_assoc($resultado))
                          echo  "<option value=".$opcion["id_categoria"].">".$opcion["nombre_categoria"]."</option>";
+<<<<<<< HEAD
                      echo "</select>";
+=======
+                     echo "</select><br><br>";
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
                 }
                 //Con esta consulta extraemos los nombres de los instructores
 
@@ -54,7 +67,11 @@
                             <select name=instructor>";
                     while($opcion=mysqli_fetch_assoc($resultado))
                         echo  "<option value=".$opcion["idinstructores"].">".$opcion["nombre"]."</option>";
+<<<<<<< HEAD
                     echo "</select>";
+=======
+                    echo "</select><br><br>";
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
                 }
 			?>
          <label class="etiquetas">Descripcion del Curso</label><br>
@@ -62,15 +79,15 @@
          <label class="etiquetas">Lo que ofrece el curso al usuario</label><br>
          <p>En este campo se colocara lo que el curso ofrece al usuario, separando cada item con una coma.</p>
         <textarea name="oferta" required placeholder="Escriba la descripcion"></textarea><br><br>
-         <label class="etiquetas">Habilidades que ganara el usario al tomar el curso</label><br>
+         <label class="etiquetas">Habilidades que aprendera el usario al tomar el curso</label><br>
           <p>En este campo se escribira lo que el usuario aprendera una vez que termine el curso, separando cada item con una coma.</p>
-        <textarea name="habilidades" required placeholder="Escriba la descripcion"></textarea><br>
+        <textarea name="habilidades" required placeholder="Escriba la descripcion"></textarea><br><br>
         <label class="etiquetas">Estado del curso</label><br>
         <p>Cuando establezca el estado en inactivo no sera visible en la pagina de cursos y no se podra seleccionar para inscribir.</p>
         <select name="estado">
         	<option >Activo</option>
         	<option>Inactivo</option>
-        </select>
+        </select><br><br>
          <div id="foto">
          	 <label class="etiquetas">Foto del curso</label><br>
      	     <input type="file" accept="image/*" name="logo" required><br>
@@ -80,9 +97,16 @@
 
      	<div id="warning"></div>
      	<button id="crearCurso">Crear curso</button>
+         <button onclick="window.location='cursosAdmin.html'">Ver todos los cursos</button>
+         <div id="mostrarLogo">
+             <img src="images/curso-virtual.jpg" name="logoActual"><br>
+         </div>";
 	 </form>
 
+<<<<<<< HEAD
 			 </article>
+=======
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 
 
 	 </div>
@@ -101,7 +125,7 @@
 
 		  if(!document.querySelector("form").checkValidity())
 			  {
-			     document.querySelector("#warning").innerHTML="<p class=warning-campos-incompletos>Debes llenar todos los campos y subir una foto</p>";
+			     document.querySelector("#warning").innerHTML="<p class=warning-campos-incompletos>Debes llenar todos los campos y subir una foto.</p>";
 
 				 let camposRequeridos= document.querySelectorAll("textarea:required, input:required");
 

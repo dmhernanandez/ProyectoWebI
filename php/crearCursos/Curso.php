@@ -121,7 +121,11 @@ elseif($_POST["accion"]=="consultaActualizar")
 						  {
 							  echo "<option value=0>No se pudo cargar categorias</option>";
 						  }
+<<<<<<< HEAD
 			       echo  "</select><br>
+=======
+			       echo  "</select><br><br>
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 							<label class=etiquetas>Instructor asignado</label><br>
 						  <select name='instructor'>
                          ";
@@ -144,31 +148,41 @@ elseif($_POST["accion"]=="consultaActualizar")
 							echo "<option value=0>No se pudo cargar los instructores</option>";
 						}
 
+<<<<<<< HEAD
 				echo "</select><br>	
 					<label class=etiquetas>Descripcion</label><br>
 					<textarea name=descripcion required>".$valor["descripcion"]."</textarea><br>
+=======
+				echo "</select><br><br>	
+					<label class=etiquetas>Descripcion</label><br>
+					<textarea name=descripcion required>".$valor["descripcion"]."</textarea><br><br>
+>>>>>>> 099dc5478668348a5bae92ce8afb3e2034a49cf3
 					 <label class=etiquetas>Lo que ofrece el curso al usuario</label><br>
 					 <p>En este campo se colocara lo que el curso ofrece al usuario, separando cada item con una coma.</p>
 					<textarea name=oferta required placeholder=Escriba lo que el curso ofrece>".$valor["oferta"]."</textarea><br><br>
-					 <label class=etiquetas>Habilidades que ganara el usario al tomar el curso</label><br>
+					 <label class=etiquetas>Habilidades que aprendera el usario al tomar el curso</label><br>
 					  <p>En este campo se escribira lo que el usuario aprendera una vez que termine el curso, separando cada item con una coma.</p>
-					<textarea name=habilidades required placeholder=Escriba las habilidades que aprendera el usuario>".$valor["habilidades"]."</textarea><br>
+					<textarea name=habilidades required placeholder=Escriba las habilidades que aprendera el usuario>".$valor["habilidades"]."</textarea><br><br>
 					<label class=etiquetas>Estado del curso</label><br>
 					<p>Si cambia al estado Inactivo, el curso no sera visible, pero si podran seguirlo cursando los que ya lo tienen inscrito.</p>
 					<select name=estado>";
 			            if($valor["estado"]=="Activo")
 						echo "<option selected>Activo</option>
 						      <option>Inactivo</option>
-					</select><br><br";
+					</select><br><br>";
 					    else
 						echo"<option>Activo</option>
 						     <option selected>Inactivo</option>
 					 </select><br><br>";
 
-					 echo   "<label class=etiquetas>Cambiar imagen</label><br>
-					<input type=file accept=image/* name=logo ><br><br>
-					<label class=etiquetas>Logo actual</label><br>
-					<img src=".$valor["rutaLogo"]." name=logoActual id=previewLogo>";
+					 echo   "
+                     <label class=etiquetas>Cambiar imagen</label><br>
+						<input type=file accept=image/* name=logo >
+					<div id=mostrarLogo>
+						<label >Logo actual</label><br>
+						<img src=".$valor["rutaLogo"]." name=logoActual><br>
+					</div>";
+
 	    }
 		
 		mysqli_close($conexion);
