@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>GADA-C++</title>
-    <link rel="stylesheet" href="css/elerarning.css">
-    <link rel="stylesheet" href="css/leccionesC.css">
+
+    <link rel="stylesheet" href="./css/elerarning.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -13,94 +13,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/util.css">
+    <link rel="stylesheet" href="./css/menu.css">
+
+
 
 </head>
 
 <body>
     <div class="w3-display-container w3-" style="height:300px;">
 
-        <div id="principal">
-            <p>
-                <a href="#"><img class="lpp " src="./images/logo.PNG" alt="logo" width="195" height="170">
+  <img class="logo" src="./images/logo.png"  width="300px" alt="">
+  <header>
+      <nav class="navegacion">
+          <ul class="menu">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="cursos.html">Cursos</a>
+              </li>
+              <li><a href="iniciarSesion.html">Inciar Sesion</a></li>
+              <li><a href="registro.html">Registrar</a></li>
 
-                </a>
-            </p>
-            <u><i class="material-icons" style="font-size:36px">account_circle</i></u>
+          </ul>
 
-        </div>
-        <div class="elear">
-            e<span class="par">-</span>learning
-        </div>
-
-        <div class="abajo">
-
-
-        </div>
-        <div class="titulo">
-            <h1 class="subT">Curso de C++ (HN/LU-3) 2P20</h1>
-
-        </div>
+      </nav>
+  </header>
         <div class="dropdown">
             <button class="dropbtn">Ajustes</button>
             <div class="dropdown-content">
                 <a href="E-learning.html"><i class='fas fa-inbox' style='font-size:15px;color:black'></i>Asignaturas</a>
-                <a href="#"><i class='fas fa-power-off' style='font-size:15px;color:black'></i>Salir</a>
+                <a href="cursos.html"><i class='fas fa-power-off' style='font-size:15px;color:black'></i>Salir</a>
             </div>
         </div>
-        <form>
+        <div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+        <p class="nomb_curso">Curso C++(HN/LU-3) 2P20</p>
+					<div class="table">
 
-            <div id="master">
-                <div class="per"><a href="#" id="fil">Perfil</a></div>
-                <p>Master,Ing Bill Gates</p>
-                <p>Horario:10:20 am</p>
-                <p>Lunes a Miercoles</p>
-                <p><b>Contacto:</b></p>
-                <p>BGates@gmail.com</p>
+						<div class="row header">
+							<div class="cell">
+								Nombre Lecciones
+							</div>
+							<div class="cell">
+								Descripcion
+							</div>
+							<div class="cell">
+								Estado
+							</div>
 
+						</div>
 
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Age">
+								31
+							</div>
+							<div class="cell" data-title="Job Title">
+								iOS Developer
+							</div>
+						</div>
 
-            </div>
-            <div class="lecciones">
-                <a href="#">
-                    <img src="./images/lecciones.png" alt="lecciones" width="150" height="85"><br>
-                    <h5 class="lec">Lecciones</h5><br>
-                </a>
-            </div>
-            <div class="exam">
-                <a href="#">
-                    <img src="./images/exam.png" alt="lecciones" width="150" height="85"><br>
-                    <h5 class="lec">Examenes</h5><br>
-                </a>
-            </div>
-            <div class="tareas">
-                <a href="#">
-                    <img src="./images/tareas.png" alt="lecciones" width="150" height="85"><br>
-                    <h5 class="lec">Ejercicio</h5><br>
-                </a>
-            </div>
-            <div class="notas">
-                <a href="#">
-                    <img src="./images/Evaluaciones.png" alt="lecciones" width="150" height="85"><br>
-                    <h5 class="lec">Evaluaciones</h5><br>
-                </a>
-            </div>
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Joseph Smith
+							</div>
+							<div class="cell" data-title="Age">
+								27
+							</div>
+							<div class="cell" data-title="Job Title">
+								Project Manager
+							</div>
 
-            <div class="videoC">
-                <a href="#">
-                    <img src="./images/conferencia.png" alt="lecciones" width="150" height="85"><br>
-                    <h5 class="lec">VideoConferecias</h5><br>
-                </a>
-            </div>
-            <div class="foros">
-                <a href="#">
-                    <img src="./images/forum.png" alt="lecciones" width="150" height="85"><br>
-                    <h5 class="lec">Foros</h5><br>
-                </a>
-            </div>
+						</div>
 
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Justin Black
+							</div>
+							<div class="cell" data-title="Age">
+								26
+							</div>
+							<div class="cell" data-title="Job Title">
+								Front-End Developer
+							</div>
+						</div>
 
-        </form>
-    </div>
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Sean Guzman
+							</div>
+							<div class="cell" data-title="Age">
+								25
+							</div>
+							<div class="cell" data-title="Job Title">
+								Web Designer
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Keith Carter
+							</div>
+							<div class="cell" data-title="Age">
+								20
+							</div>
+							<div class="cell" data-title="Job Title">
+								Graphic Designer
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Austin Medina
+							</div>
+							<div class="cell" data-title="Age">
+								32
+							</div>
+							<div class="cell" data-title="Job Title">
+								Photographer
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Age">
+								31
+							</div>
+							<div class="cell" data-title="Job Title">
+								iOS Developer
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Joseph Smith
+							</div>
+							<div class="cell" data-title="Age">
+								27
+							</div>
+							<div class="cell" data-title="Job Title">
+								Project Manager
+							</div>
+
+						</div>
+
+					</div>
+			</div>
+		</div>
+	</div>
+
+  <script src="./css/main.js"></script>
+
 </body>
 
 </html>

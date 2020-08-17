@@ -1,159 +1,171 @@
 /*CURSO1*/
 
-#espana {
-    width: 20%;
-    max-width: 900px;
+.espana {
+    width:80%;
+height: auto;
     margin: auto;
     text-decoration: none;
     color: white;
-}
+    position: relative;
+    /*background-color: red;*/
 
-#curso1 {
-    background: rgba(52, 52, 110, 0.582);
-    padding: 20px;
-    margin: 20px 0;
-    color: #fff;
+}
+.cur{
+  width:300px;
+  background-color:#ECF0F1 ;
+  margin: 20px 8px 20px 15px;
+
+  display: inline-block;
+position:relative;
+}
+.barra-inferior{
+height:5px;
+margin: 0px;
+background-color:red;
+padding: 0px;
+}
+.cur:hover{
     box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+}
+.separador{
+  height:70px;
+  display: block;
 }
 
-#curso1 {
-    color: #fff;
-}
-
-#curso1 hr {
+ hr {
     background: red;
-    height: 5px;
+    height: 10px;
     border: none;
+    padding:0px;
+    margin:0px;
 }
 
-#curso1,
+
+
 p {
     line-height: 25px;
 }
-
-#curso1 h2,
-#curso1 p,
-#curso1 hr {
-    margin-bottom: 20px;
-}
-
-#curso1 {
-    position: relative;
-    left: -320px;
-    top: 50px;
-}
-
-
-/*********CURSO2***********/
-
-#espana {
-    width: 20%;
-    max-width: 900px;
-    margin: auto;
-    text-decoration: none;
-    color: white;
-}
-
-#c2 {
-    background: rgba(52, 52, 110, 0.582);
-    padding: 20px;
-    margin: 20px 0;
-    color: #fff;
-    box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.24);
-}
-
-#c2 {
-    color: #fff;
-}
-
-#c2 hr {
-    background: red;
-    height: 5px;
-    border: none;
-}
-
-#c2,
-p {
-    line-height: 25px;
-}
-
-#c2,
-#c2 p,
-#c2 hr {
-    margin-bottom: 20px;
-}
-
-#c2 {
-    position: relative;
-    left: -350px;
-    top: 100px;
-}
-
-#c2 {
-    position: relative;
-    left: 10px;
-    top: -305px;
-}
-
-
-/**********************CURSOS3********************************/
-
-#espana {
-    width: 20%;
-    max-width: 900px;
-    margin: auto;
-    text-decoration: none;
-    color: white;
-}
-
-#c3 {
-    background: rgba(52, 52, 110, 0.582);
-    padding: 20px;
-    margin: 20px 0;
-    color: #fff;
-    box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.24);
-}
-
-#c3 {
-    color: #fff;
-}
-
-#c3 hr {
-    background: red;
-    height: 5px;
-    border: none;
-}
-
-#c3,
-p {
-    line-height: 25px;
-}
-
-#c3,
-#c3 p,
-#c3 hr {
-    margin-bottom: 20px;
-}
-
-#c3 {
-    position: relative;
-    left: -350px;
-    top: 100px;
-}
-
-#c3 {
-    position: relative;
-    left: 338px;
-    top: -660px;
-}
-
 .parrafo {
     font-size: 20px;
+    color:#E5E7E9 ;
+    text-align: justify;
+    font-family:Quicksand-bold;
+}
+.ver-curso>img{
+  padding: 0;
+  height:140px;
+  width: 100%;
+  margin: 0;
+}
+
+.nombre-curso{
+  color:#34495E;
+
+  margin-left: 10px;
+  margin-top:15px;
+}
+/***********************************************************************************************************************************/
+.nombre-instructor{
+  color:#34495E;
+
+  font-size: 20px;
+margin-left: 15px
+}
+.tutor{
+  margin-left: 15px;
+  margin-bottom:7px;
+  color:#34495E;
+
+}
+
+#sub {
+    background: red;
+    height: 2px;
+    border: none;
+    position: relative;
+    top: 109px;
+}
+
+.pie {
+    font-size: 20px;
+    position: absolute;
+}
+
+.pie2 {
+    font-size: 17px;
+    position: absolute;
+    top: 520px;
+}
+
+.video {
+    width: 955px;
+    position: absolute;
+    top: 820px;
+    left: 150px;
+}
+.imagen{
+  width: 955px;
+  position: absolute;
+  top: 220px;
+  left: 150px;
+}
+
+.pv {
+    font-size: 20px;
+}
+
+.inCur {
+    position: absolute;
+    top: 1300px;
+    left: 150px;
     color: white;
 }
 
 
-/***********************************************************************************************************************************/
+
+article{
+
+    padding: 20px;
+    margin: 20px 0;
+    color:#000;
+    box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.24);
+}
+
+#contenido h2 p {
+    color: #fff;
+}
+
+#contenido hr {
+    background: red;
+    height: 5px;
+    border: none;
+}
+
+#contenido p {
+    line-height: 25px;
+}
+
+#contenido h2,
+#contenido p,
+#contenido hr {
+    margin-bottom: 20px;
+}
+
+
+.cuadro {
+    width: 210px;
+    height: 140px;
+    border-left: 6px solid red;
+    background-color: lightgrey;
+    position: relative;
+    left: 960px;
+    top: 280px;
+}
+
+#la {
+    width: 158px;
+}
 
 
 /*Cursos*/
@@ -170,8 +182,8 @@ p {
 .dropdown {
     position: relative;
     display: inline-block;
-    left: 150px;
-    top: 80px;
+    left: 1050px;
+    top: -40px;
 }
 
 .dropdown-content {
@@ -200,67 +212,4 @@ p {
 
 .dropdown:hover .dropbtn {
     background-color: #5DADE2;
-}
-
-.imagen {
-    position: absolute;
-    left: 150px;
-    top: 225px;
-    width: 950px;
-}
-
-#sub {
-    background: red;
-    height: 2px;
-    border: none;
-    position: relative;
-    top: 109px;
-}
-
-.pie {
-    font-size: 20px;
-    position: absolute;
-}
-
-.pie2 {
-    font-size: 17px;
-    position: absolute;
-    top: 520px;
-}
-
-.video {
-    width: 955px;
-    position: absolute;
-    top: 820px;
-    left: 150px;
-}
-
-.pv {
-    font-size: 20px;
-}
-
-.inCur {
-    position: absolute;
-    top: 1300px;
-    left: 150px;
-    color: white;
-}
-
-ul {
-    position: relative;
-    left: 50px;
-}
-
-.cuadro {
-    width: 210px;
-    height: 140px;
-    border-left: 6px solid red;
-    background-color: lightgrey;
-    position: relative;
-    left: 960px;
-    top: 280px;
-}
-
-#la {
-    width: 158px;
 }
